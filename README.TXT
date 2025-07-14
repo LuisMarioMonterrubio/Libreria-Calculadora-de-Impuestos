@@ -1,144 +1,173 @@
 # 📚 Librería Calculadora de Impuestos Mexicanos
 
-> Componente JavaBean para cálculo preciso de impuestos con validación robusta.
+<div align="center">
+
+![Java](https://img.shields.io/badge/Java-SE%2017-orange?style=for-the-badge&logo=java)
+![NetBeans](https://img.shields.io/badge/NetBeans-25-blue?style=for-the-badge&logo=apache-netbeans-ide)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0-red?style=for-the-badge)
+
+**Componente JavaBean para cálculo preciso de impuestos mexicanos con validación robusta**
+
+[Características](#-características) •
+[Instalación](#-instalación) •
+[Uso](#-uso) •
+[API](#-documentación-de-la-api) •
+[Validaciones](#-validaciones) •
+[Equipo](#-equipo)
+
+</div>
 
 ---
 
-## 📌 Índice
+## 📋 Tabla de Contenidos
 
-- [Características](#características)
-- [Tecnologías Usadas](#tecnologías-usadas)
-- [Explicación del Código](#explicación-del-código)
-- [Métodos y Variables](#métodos-y-variables)
-- [Validaciones](#validaciones)
-- [Uso del JAR](#uso-del-jar)
-- [Ejemplo de Validación](#ejemplo-de-validación)
-- [Equipo y Créditos](#equipo-y-créditos)
-- [Video Explicativo](#video-explicativo)
-
----
-
-## ✅ Características
-
-### Funcionalidades principales
-
-- [x] Validación de entrada y control de errores  
-- [x] Distribuido como `.jar` reutilizable  
-- [ ] Conversión automática al ingresar un solo valor  
-- [ ] Estilos visuales configurables desde NetBeans  
-- [ ] Propiedad `modoConversion` con editor desplegable  
+- [🚀 Características](#-características)
+- [📦 Instalación](#-instalación)
+- [💻 Uso](#-uso)
+- [📖 Documentación de la API](#-documentación-de-la-api)
+- [🛡️ Validaciones](#️-validaciones)
+- [📊 Diagramas](#-diagramas)
+- [🎥 Video Explicativo](#-video-explicativo)
+- [👥 Equipo](#-equipo)
+- [📄 Licencia](#-licencia)
 
 ---
 
-## 🛠 Tecnologías Usadas
+## 🚀 Características
 
-| Herramienta         | Uso principal                      |
-|---------------------|------------------------------------|
-| Java SE 17          | Lógica del componente y POO        |
-| Swing (JavaBeans)   | Diseño de interfaces gráficas      |
-| NetBeans 25         | Desarrollo y construcción del `.jar` |
-| Editor de propiedades | Configuración visual desde NetBeans |
-| Git y GitHub        | Control de versiones y documentación |
+### ✨ Funcionalidades Principales
 
----
+- ✅ **Validación de entrada** y control de errores robusto
+- 📦 **Distribuido como .jar** reutilizable
+- 🔧 **Estilos visuales** configurables desde NetBeans
+- ⚙️ **Propiedad modoconversion** con editor desplegable
+- 🔄 **Conversión automática** al ingresar un solo valor
 
-## 🔍 Explicación del Código
+### 🛠️ Tecnologías y Herramientas
 
-La librería proporciona métodos estáticos para calcular 6 impuestos mexicanos clave, validando entradas antes de realizar los cálculos.
-
-flowchart TD
-    A[Cliente] --> B[Llamar método]
-    B --> C{Validar parámetros}
-    C -->|Válidos| D[Calcular impuesto]
-    C -->|Inválidos| E[Lanzar excepción]
-    D --> F[Retornar resultado]
-````
+| Herramienta | Uso Principal |
+|-------------|---------------|
+| **Java SE 17** | Lógica del componente y POO |
+| **Swing (JavaBeans)** | Diseño de interfaces gráficas |
+| **NetBeans 25** | Desarrollo y construcción del .jar |
+| **Editor de propiedades** | Configuración visual desde el editor |
+| **Git y GitHub** | Control de versiones y documentación |
 
 ---
 
-## 📋 Métodos y Variables
+## 📦 Instalación
 
-### Métodos disponibles
+### Paso 1: Descargar el archivo JAR
 
-| Método            | Parámetros                                                     | Retorno | Descripción                         |
-| ----------------- | -------------------------------------------------------------- | ------- | ----------------------------------- |
-| `calcularIVA`     | `monto (double)`                                               | double  | Calcula IVA al 16%                  |
-| `calcularISR`     | `ingresos (double), deducciones (double)`                      | double  | Calcula ISR con tasa progresiva     |
-| `calcularIEPS`    | `monto (double), tasa (double)`                                | double  | Calcula IEPS con tasa personalizada |
-| `calcularISN`     | `totalNomina (double), tasaPorcentual (double)`                | double  | Calcula ISN sobre nómina            |
-| `calcularPredial` | `valorCatastral, tasaPorcentual, descuentoPorcentual (double)` | double  | Calcula predial con descuento       |
-| `calcularISAN`    | `valorVehiculo (double)`                                       | double  | Calcula ISAN con tasas progresivas  |
+1. Ve al repositorio del proyecto en GitHub
+2. Dirígete a la sección **Releases**
+3. Descarga el archivo `Libreria_Impuestos.jar`
 
-### Variables clave
+### Paso 2: Agregar JAR a tu proyecto Java (NetBeans)
 
-| Variable              | Tipo   | Alcance   | Descripción                      |
-| --------------------- | ------ | --------- | -------------------------------- |
-| `monto`               | double | Parámetro | Base para IVA/IEPS               |
-| `ingresos`            | double | Parámetro | Ingresos gravables para ISR      |
-| `deducciones`         | double | Parámetro | Deducciones autorizadas para ISR |
-| `tasa`                | double | Parámetro | Tasa personalizada IEPS (%)      |
-| `totalNomina`         | double | Parámetro | Total nómina gravable para ISN   |
-| `tasaPorcentual`      | double | Parámetro | Tasa ISN o Predial (%)           |
-| `valorCatastral`      | double | Parámetro | Valor oficial del inmueble       |
-| `descuentoPorcentual` | double | Parámetro | Descuento por pronto pago (%)    |
-| `valorVehiculo`       | double | Parámetro | Valor del vehículo para ISAN     |
-
----
-
-## 🛡 Validaciones
-
-| Método            | Validación                          | Mensaje de Error                                 | Ejemplo de Error                    |
-| ----------------- | ----------------------------------- | ------------------------------------------------ | ----------------------------------- |
-| `calcularIVA`     | `monto >= 0`                        | "Monto no puede ser negativo"                    | `calcularIVA(-100)` → Excepción     |
-| `calcularISR`     | `ingresos >= 0 && deducciones >= 0` | "Ingresos o deducciones no pueden ser negativos" | `calcularISR(-500, 0)`              |
-| `calcularIEPS`    | `monto >= 0 && tasa >= 0`           | "Monto y tasa no pueden ser negativos"           | `calcularIEPS(100, -5)`             |
-| `calcularISN`     | `totalNomina >= 0 && tasa >= 0`     | "Nómina y tasa no pueden ser negativas"          | `calcularISN(-1000, 3)`             |
-| `calcularPredial` | `Todos >= 0`                        | "Valores no pueden ser negativos"                | `calcularPredial(-200000, 0.5, 10)` |
-| `calcularISAN`    | `valorVehiculo >= 0`                | "Valor no puede ser negativo"                    | `calcularISAN(-500000)`             |
-
----
-
-## 📥 Uso del JAR
-
-### 1. Descargar
-
-* Ve al repositorio de GitHub
-* Entra en **Releases**
-* Descarga `Libreria_Impuestos.jar`
-
-### 2. Importar en NetBeans
-
-graph LR
-    A[Proyecto] --> B[Libraries]
-    B --> C[Add JAR/Folder]
-    C --> D[Seleccionar JAR]
-    D --> E[Aplicar cambios]
+```
+Proyecto → Libraries → Add JAR/Folder → Seleccionar Libreria_Impuestos.jar → Aplicar cambios
 ```
 
-### 3. Usar la librería
+### Paso 3: Importar en tu código
+
+```java
+import calculadora.CalculadoraImpuestos;
+```
+
+---
+
+## 💻 Uso
+
+### Ejemplo Básico
 
 ```java
 import calculadora.CalculadoraImpuestos;
 
-public class MiClase {
+public class EjemploUso {
     public static void main(String[] args) {
-        // Ejemplo de uso
-        double iva = CalculadoraImpuestos.calcularIVA(1000.0);
-        System.out.println("IVA calculado: " + iva);
-
-        double isn = CalculadoraImpuestos.calcularISN(50000.0, 2.5);
-        System.out.println("ISN calculado: " + isn);
+        try {
+            // Calcular IVA
+            double iva = CalculadoraImpuestos.calcularIVA(1000.0);
+            System.out.println("IVA calculado: $" + iva);
+            
+            // Calcular ISR
+            double isr = CalculadoraImpuestos.calcularISR(50000.0, 5000.0);
+            System.out.println("ISR calculado: $" + isr);
+            
+            // Calcular ISN
+            double isn = CalculadoraImpuestos.calcularISN(50000.0, 2.5);
+            System.out.println("ISN calculado: $" + isn);
+            
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
     }
 }
 ```
 
-### 4. Compilar y ejecutar
+### Ejemplo con Manejo de Errores
 
-NetBeans incluirá automáticamente la librería al compilar el proyecto.
+```java
+public class EjemploValidacion {
+    public static void main(String[] args) {
+        try {
+            // Esto lanzará una excepción
+            double iva = CalculadoraImpuestos.calcularIVA(-100.0);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error de validación: " + e.getMessage());
+            // Output: "Error de validación: El monto no puede ser negativo"
+        }
+    }
+}
+```
 
 ---
 
-## 🧪 Ejemplo de Validación
+## 📖 Documentación de la API
+
+### 📋 Métodos Disponibles
+
+| Método | Parámetros | Retorno | Descripción |
+|--------|------------|---------|-------------|
+| `calcularIVA` | `monto (double)` | `double` | Calcula IVA al 16% |
+| `calcularISR` | `ingresos (double)`, `deducciones (double)` | `double` | Calcula ISR con tasa progresiva |
+| `calcularIEPS` | `monto (double)`, `tasa (double)` | `double` | Calcula IEPS con tasa personalizada |
+| `calcularISN` | `totalNomina (double)`, `tasaPorcentual (double)` | `double` | Calcula ISN sobre nómina |
+| `calcularPredial` | `valorCatastral (double)`, `tasaPorcentual (double)`, `descuentoPorcentual (double)` | `double` | Calcula predial con descuento |
+| `calcularISAN` | `valorVehiculo (double)` | `double` | Calcula ISAN con tasas progresivas |
+
+### 📊 Variables y Parámetros
+
+| Variable | Tipo | Alcance | Descripción |
+|----------|------|---------|-------------|
+| `monto` | `double` | Parámetro | Base para cálculo de IVA/IEPS |
+| `ingresos` | `double` | Parámetro | Ingresos gravables para ISR |
+| `deducciones` | `double` | Parámetro | Deducciones autorizadas para ISR |
+| `tasa` | `double` | Parámetro | Tasa personalizada para IEPS (%) |
+| `totalNomina` | `double` | Parámetro | Total de nómina gravable para ISN |
+| `tasaPorcentual` | `double` | Parámetro | Tasa aplicable para ISN/Predial (%) |
+| `valorCatastral` | `double` | Parámetro | Valor oficial del inmueble |
+| `descuentoPorcentual` | `double` | Parámetro | Descuento por pago anticipado (%) |
+| `valorVehiculo` | `double` | Parámetro | Valor de factura del vehículo |
+
+---
+
+## 🛡️ Validaciones
+
+### Tabla de Validaciones
+
+| Método | Validación | Mensaje de Error | Ejemplo de Error |
+|--------|------------|------------------|------------------|
+| `calcularIVA` | `monto >= 0` | "El monto no puede ser negativo" | `calcularIVA(-100)` → Excepción |
+| `calcularISR` | `ingresos >= 0 && deducciones >= 0` | "Ingresos o deducciones no pueden ser negativos" | `calcularISR(-500, 0)` → Excepción |
+| `calcularIEPS` | `monto >= 0 && tasa >= 0` | "Monto y tasa no pueden ser negativos" | `calcularIEPS(100, -5)` → Excepción |
+| `calcularISN` | `totalNomina >= 0 && tasaPorcentual >= 0` | "Nómina y tasa no pueden ser negativas" | `calcularISN(-1000, 3)` → Excepción |
+| `calcularPredial` | Todos los parámetros >= 0 | "Valores no pueden ser negativos" | `calcularPredial(-200000, 0.5, 10)` → Excepción |
+| `calcularISAN` | `valorVehiculo >= 0` | "Valor de vehículo no puede ser negativo" | `calcularISAN(-500000)` → Excepción |
+
+### Ejemplo de Implementación de Validación
 
 ```java
 public static double calcularIVA(double monto) {
@@ -151,7 +180,9 @@ public static double calcularIVA(double monto) {
 
 ---
 
-## 📌 Diagrama de Flujo de Validación
+## 📊 Diagramas
+
+### Flujo de Validación
 
 ```mermaid
 flowchart TB
@@ -161,34 +192,3 @@ flowchart TB
     Calculate --> Return[Retornar resultado]
     Error --> End[Fin con error]
     Return --> End[Fin exitoso]
-```
-
----
-
-## 👥 Equipo y Créditos
-
-**Proyecto desarrollado por el equipo 14-TAP Verano**
-
-| Nombre                              | Iniciales |
-| ----------------------------------- | --------- |
-| Monterrubio Diaz Luis Mario         | `LM`      |
-| Santiago Espinoza Sócrates Emiliano | `SE`      |
-
----
-
-## 🎥 Video Explicativo
-
-[![Video explicativo en YouTube](https://img.youtube.com/vi/UxPEz3DOm34/0.jpg)](https://www.youtube.com/watch?v=UxPEz3DOm34)
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
-
----
-
-```
-
-¿Deseas que te lo genere como archivo `.md` para descarga directa? Puedo preparártelo.
-```
