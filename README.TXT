@@ -1,4 +1,3 @@
-
 # 📚 Librería Calculadora de Impuestos Mexicanos
 
 > Componente JavaBean para cálculo preciso de impuestos con validación robusta.
