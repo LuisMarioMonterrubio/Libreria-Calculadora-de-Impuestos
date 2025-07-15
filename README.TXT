@@ -7,7 +7,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Version](https://img.shields.io/badge/Version-1.0-red?style=for-the-badge)
 
-**Componente JavaBean para cálculo preciso de impuestos mexicanos con validación robusta**
+*Componente JavaBean para cálculo preciso de impuestos mexicanos con validación robusta*
 
 [Características](#-características) •
 [Instalación](#-instalación) •
@@ -26,7 +26,7 @@
 - [📦 Instalación](#-instalación)
 - [💻 Uso](#-uso)
 - [📖 Documentación de la API](#-documentación-de-la-api)
-- [🛡️ Validaciones](#️-validaciones)
+- [🛡 Validaciones](#-validaciones)
 - [📊 Diagramas](#-diagramas)
 - [🎥 Video Explicativo](#-video-explicativo)
 - [👥 Equipo](#-equipo)
@@ -38,21 +38,21 @@
 
 ### ✨ Funcionalidades Principales
 
-- ✅ **Validación de entrada** y control de errores robusto
-- 📦 **Distribuido como .jar** reutilizable
-- 🔧 **Estilos visuales** configurables desde NetBeans
-- ⚙️ **Propiedad modoconversion** con editor desplegable
-- 🔄 **Conversión automática** al ingresar un solo valor
+- ✅ *Validación de entrada* y control de errores robusto
+- 📦 *Distribuido como .jar* reutilizable
+- 🔧 *Estilos visuales* configurables desde NetBeans
+- ⚙ *Propiedad modoconversion* con editor desplegable
+- 🔄 *Conversión automática* al ingresar un solo valor
 
-### 🛠️ Tecnologías y Herramientas
+### 🛠 Tecnologías y Herramientas
 
 | Herramienta | Uso Principal |
 |-------------|---------------|
-| **Java SE 17** | Lógica del componente y POO |
-| **Swing (JavaBeans)** | Diseño de interfaces gráficas |
-| **NetBeans 25** | Desarrollo y construcción del .jar |
-| **Editor de propiedades** | Configuración visual desde el editor |
-| **Git y GitHub** | Control de versiones y documentación |
+| *Java SE 17* | Lógica del componente y POO |
+| *Swing (JavaBeans)* | Diseño de interfaces gráficas |
+| *NetBeans 25* | Desarrollo y construcción del .jar |
+| *Editor de propiedades* | Configuración visual desde el editor |
+| *Git y GitHub* | Control de versiones y documentación |
 
 ---
 
@@ -61,20 +61,20 @@
 ### Paso 1: Descargar el archivo JAR
 
 1. Ve al repositorio del proyecto en GitHub
-2. Dirígete a la sección **Releases**
-3. Descarga el archivo `Libreria_Impuestos.jar`
+2. Dirígete a la sección *Releases*
+3. Descarga el archivo Libreria_Impuestos.jar
 
 ### Paso 2: Agregar JAR a tu proyecto Java (NetBeans)
 
-```
+
 Proyecto → Libraries → Add JAR/Folder → Seleccionar Libreria_Impuestos.jar → Aplicar cambios
-```
+
 
 ### Paso 3: Importar en tu código
 
-```java
+java
 import calculadora.CalculadoraImpuestos;
-```
+
 
 ---
 
@@ -82,7 +82,7 @@ import calculadora.CalculadoraImpuestos;
 
 ### Ejemplo Básico
 
-```java
+java
 import calculadora.CalculadoraImpuestos;
 
 public class EjemploUso {
@@ -105,11 +105,11 @@ public class EjemploUso {
         }
     }
 }
-```
+
 
 ### Ejemplo con Manejo de Errores
 
-```java
+java
 public class EjemploValidacion {
     public static void main(String[] args) {
         try {
@@ -121,7 +121,7 @@ public class EjemploValidacion {
         }
     }
 }
-```
+
 
 ---
 
@@ -131,52 +131,52 @@ public class EjemploValidacion {
 
 | Método | Parámetros | Retorno | Descripción |
 |--------|------------|---------|-------------|
-| `calcularIVA` | `monto (double)` | `double` | Calcula IVA al 16% |
-| `calcularISR` | `ingresos (double)`, `deducciones (double)` | `double` | Calcula ISR con tasa progresiva |
-| `calcularIEPS` | `monto (double)`, `tasa (double)` | `double` | Calcula IEPS con tasa personalizada |
-| `calcularISN` | `totalNomina (double)`, `tasaPorcentual (double)` | `double` | Calcula ISN sobre nómina |
-| `calcularPredial` | `valorCatastral (double)`, `tasaPorcentual (double)`, `descuentoPorcentual (double)` | `double` | Calcula predial con descuento |
-| `calcularISAN` | `valorVehiculo (double)` | `double` | Calcula ISAN con tasas progresivas |
+| calcularIVA | monto (double) | double | Calcula IVA al 16% |
+| calcularISR | ingresos (double), deducciones (double) | double | Calcula ISR con tasa progresiva |
+| calcularIEPS | monto (double), tasa (double) | double | Calcula IEPS con tasa personalizada |
+| calcularISN | totalNomina (double), tasaPorcentual (double) | double | Calcula ISN sobre nómina |
+| calcularPredial | valorCatastral (double), tasaPorcentual (double), descuentoPorcentual (double) | double | Calcula predial con descuento |
+| calcularISAN | valorVehiculo (double) | double | Calcula ISAN con tasas progresivas |
 
 ### 📊 Variables y Parámetros
 
 | Variable | Tipo | Alcance | Descripción |
 |----------|------|---------|-------------|
-| `monto` | `double` | Parámetro | Base para cálculo de IVA/IEPS |
-| `ingresos` | `double` | Parámetro | Ingresos gravables para ISR |
-| `deducciones` | `double` | Parámetro | Deducciones autorizadas para ISR |
-| `tasa` | `double` | Parámetro | Tasa personalizada para IEPS (%) |
-| `totalNomina` | `double` | Parámetro | Total de nómina gravable para ISN |
-| `tasaPorcentual` | `double` | Parámetro | Tasa aplicable para ISN/Predial (%) |
-| `valorCatastral` | `double` | Parámetro | Valor oficial del inmueble |
-| `descuentoPorcentual` | `double` | Parámetro | Descuento por pago anticipado (%) |
-| `valorVehiculo` | `double` | Parámetro | Valor de factura del vehículo |
+| monto | double | Parámetro | Base para cálculo de IVA/IEPS |
+| ingresos | double | Parámetro | Ingresos gravables para ISR |
+| deducciones | double | Parámetro | Deducciones autorizadas para ISR |
+| tasa | double | Parámetro | Tasa personalizada para IEPS (%) |
+| totalNomina | double | Parámetro | Total de nómina gravable para ISN |
+| tasaPorcentual | double | Parámetro | Tasa aplicable para ISN/Predial (%) |
+| valorCatastral | double | Parámetro | Valor oficial del inmueble |
+| descuentoPorcentual | double | Parámetro | Descuento por pago anticipado (%) |
+| valorVehiculo | double | Parámetro | Valor de factura del vehículo |
 
 ---
 
-## 🛡️ Validaciones
+## 🛡 Validaciones
 
 ### Tabla de Validaciones
 
 | Método | Validación | Mensaje de Error | Ejemplo de Error |
 |--------|------------|------------------|------------------|
-| `calcularIVA` | `monto >= 0` | "El monto no puede ser negativo" | `calcularIVA(-100)` → Excepción |
-| `calcularISR` | `ingresos >= 0 && deducciones >= 0` | "Ingresos o deducciones no pueden ser negativos" | `calcularISR(-500, 0)` → Excepción |
-| `calcularIEPS` | `monto >= 0 && tasa >= 0` | "Monto y tasa no pueden ser negativos" | `calcularIEPS(100, -5)` → Excepción |
-| `calcularISN` | `totalNomina >= 0 && tasaPorcentual >= 0` | "Nómina y tasa no pueden ser negativas" | `calcularISN(-1000, 3)` → Excepción |
-| `calcularPredial` | Todos los parámetros >= 0 | "Valores no pueden ser negativos" | `calcularPredial(-200000, 0.5, 10)` → Excepción |
-| `calcularISAN` | `valorVehiculo >= 0` | "Valor de vehículo no puede ser negativo" | `calcularISAN(-500000)` → Excepción |
+| calcularIVA | monto >= 0 | "El monto no puede ser negativo" | calcularIVA(-100) → Excepción |
+| calcularISR | ingresos >= 0 && deducciones >= 0 | "Ingresos o deducciones no pueden ser negativos" | calcularISR(-500, 0) → Excepción |
+| calcularIEPS | monto >= 0 && tasa >= 0 | "Monto y tasa no pueden ser negativos" | calcularIEPS(100, -5) → Excepción |
+| calcularISN | totalNomina >= 0 && tasaPorcentual >= 0 | "Nómina y tasa no pueden ser negativas" | calcularISN(-1000, 3) → Excepción |
+| calcularPredial | Todos los parámetros >= 0 | "Valores no pueden ser negativos" | calcularPredial(-200000, 0.5, 10) → Excepción |
+| calcularISAN | valorVehiculo >= 0 | "Valor de vehículo no puede ser negativo" | calcularISAN(-500000) → Excepción |
 
 ### Ejemplo de Implementación de Validación
 
-```java
+java
 public static double calcularIVA(double monto) {
     if (monto < 0) {
         throw new IllegalArgumentException("El monto no puede ser negativo");
     }
     return monto * 0.16;
 }
-```
+
 
 ---
 
