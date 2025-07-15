@@ -198,6 +198,3 @@ public static double calcularIVA(double monto) {
 
 ---
 
-## 📄 Licencia
-
-Distribuido bajo licencia MIT. Consulta el archivo `LICENSE` para más información.
