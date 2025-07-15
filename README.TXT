@@ -1,11 +1,5 @@
 # 📚 Librería Calculadora de Impuestos Mexicanos
 
-<div align="center">
-
-![Java](https://img.shields.io/badge/Java-SE%2017-orange?style=for-the-badge&logo=java)
-![NetBeans](https://img.shields.io/badge/NetBeans-25-blue?style=for-the-badge&logo=apache-netbeans-ide)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.0-red?style=for-the-badge)
 
 *Componente JavaBean para cálculo preciso de impuestos mexicanos con validación robusta*
 
